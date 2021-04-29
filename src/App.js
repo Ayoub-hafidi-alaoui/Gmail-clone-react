@@ -19,7 +19,7 @@ function App() {
         <div className="app__body">
           <SideBar/>
           <Switch>
-            <Route path="mail">
+            <Route path="/mail">
               <Mail/>
             </Route>
             <Route path="/">
