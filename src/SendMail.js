@@ -16,11 +16,12 @@ function SendMail() {
                 <CloseIcon className="sendMail__close"/>
             </div>
             <form onSubmit={handleSubmit(onSubmit)} >
-                <input name="to" placeholder="To" type="text"  />
-                <input  name="subject" placeholder="subject" type="text"  />
-                <input name="message" placeholder="Message .." type="text" className="sendMail__message"   />
+                <input id="to" name="to"  placeholder="To" type="text" {...register('to',{required:true})} />
+                {/* {errors.to && <p className="sendMail__error">To is required </p> } */}
+                <input  name="subject" placeholder="subject" type="text"  {...register('subject',{required:true})} />
+                <input name="message" placeholder="Message .." type="text" className="sendMail__message" {...register('message',{required:true})}  />
                 <div className="sendMail__options">
-                    <Button className="sendMail__send">Send</Button>
+                    <Button className="sendMail__send" variant="contained" color="primary" type="submit">Send</Button>
                 </div>
             </form>
         </div>
